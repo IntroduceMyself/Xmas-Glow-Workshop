@@ -1,0 +1,830 @@
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: #FFD700; 
+}
+
+.nav-link {
+    position: relative;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FFD700;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-collapse {
+    transition: transform 0.5s ease;
+}
+
+.navbar-toggler[aria-expanded="true"] ~ .navbar-collapse {
+    transform: translateY(0);
+}
+
+.navbar-collapse.collapse:not(.show) {
+    transform: translateY(-10%);
+}
+.custom-toggler {
+    position: relative;
+    width: 30px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1051;
+}
+
+.custom-toggler .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.custom-toggler.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.custom-toggler.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-toggler.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+.custom-toggler {
+    position: relative;
+    width: 40px; /* Tăng chiều dài tổng thể */
+    height: 24px;
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1051;
+}
+.logo {
+    height: 30px; /* Chiều cao logo */
+    width: auto; /* Tự động giữ tỷ lệ */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Căn giữa logo và chữ/icon theo trục dọc */
+}
+
+.me-2 {
+    margin-right: 0.5rem; /* Khoảng cách giữa logo và icon cây thông */
+}
+.custom-toggler .bar {
+    width: 100%; 
+    height: 3px; 
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+.custom-toggler.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.custom-toggler.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-toggler.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+.navbar {
+    background: linear-gradient(45deg, #ff0000, #007dff); /* Màu đỏ và xanh Giáng sinh */
+    position: relative;
+    overflow: hidden; /* Đảm bảo tuyết không tràn ra ngoài */
+    z-index: 0;
+}
+
+/* Tạo lớp tuyết thứ nhất */
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: -50%;
+    width: 300%;
+    height: 300%;
+    background-image: radial-gradient(white 2px, transparent 2px); /* Tuyết nhỏ */
+    background-size: 50px 50px; /* Khoảng cách tuyết */
+    animation: snowfall 15s linear infinite; /* Tuyết rơi liên tục */
+    opacity: 0.7; /* Độ trong suốt */
+    z-index: 0;
+}
+
+/* Tạo lớp tuyết thứ hai */
+.navbar::after {
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: -50%;
+    width: 300%;
+    height: 300%;
+    background-image: radial-gradient(white 3px, transparent 3px); /* Tuyết lớn */
+    background-size: 70px 70px; /* Khoảng cách tuyết */
+    animation: snowfall 20s linear infinite; /* Tuyết rơi chậm hơn */
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Hiệu ứng rơi của tuyết */
+@keyframes snowfall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(200%);
+    }
+}
+
+/* Nội dung navbar ở trên lớp tuyết */
+.navbar .container,
+.navbar .navbar-toggler {
+    position: relative;
+    z-index: 1;
+}
+#snowfall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 10px;
+    opacity: 0.8;
+    animation: fall linear infinite, sway ease-in-out infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.banner {
+    position: relative;
+    height: 100vh; /* Chiều cao toàn màn hình */
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover; /* Hình ảnh nền */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Hiệu ứng overlay mờ */
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Tông đen nhẹ để làm nổi bật nội dung */
+    z-index: 0;
+}
+
+/* Nội dung trong banner */
+.banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Nút trong banner */
+.btn-banner {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background: #ff0000; /* Màu đỏ nổi bật */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-banner:hover {
+    background: #e60000;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+.btn-banner {
+    display: inline-flex; /* Hiển thị icon và chữ trên cùng một hàng */
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    font-size: 1rem; /* Kích thước chữ */
+    color: white;
+    background: #ff0000; /* Màu nền đỏ nổi bật */
+    border-radius: 25px; /* Góc bo tròn */
+    text-decoration: none; /* Loại bỏ gạch chân */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-banner i {
+    font-size: 1.5rem; /* Kích thước icon */
+}
+
+.btn-banner:hover {
+    background: #e60000;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+.banner {
+    position: relative;
+    height: 100vh;
+    background: url('Screenshot 2024-12-02 134654.png') no-repeat center center/cover; /* Cập nhật đường dẫn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+.glowing-text {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    animation: glow 2s infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.glowing-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #00ff00, #00ffee, #007bff, #9d00ff, #ff00eb, #ff0000);
+    background-size: 400%;
+    filter: blur(900px);
+    z-index: -1;
+    animation: glow-bg 6s infinite linear;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff7300, 0 0 30px #ff7300, 0 0 40px #ff7300, 0 0 50px #ff7300;
+    }
+    50% {
+        text-shadow: 0 0 20px #fff, 0 0 40px #ffeb00, 0 0 60px #ffeb00, 0 0 80px #ffeb00, 0 0 100px #ffeb00;
+    }
+}
+
+@keyframes glow-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ee2005, #ffeb00);
+    border-radius: 5px; 
+    border: 2px solid #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ffeb00, #ee2005); 
+}
+
+.intro-section {
+    padding: 50px 20px;
+    background: linear-gradient(120deg, #ffafbd, #ffc3a0);
+    color: #4b2e39;
+    text-align: center;
+}
+
+.intro-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-section .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #6a1b9a;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.intro-section .section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #6d4c41;
+}
+
+.intro-section .section-content {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #4b2e39;
+}
+
+.intro-section .section-footer {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #6a1b9a;
+}
+.banner {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('Screenshot 2024-12-02 134654.png') no-repeat center center/cover;
+    z-index: 1;
+}
+
+#about {
+    position: relative;
+    margin-top: -100px; 
+    z-index: 2;
+    background: rgb(243, 206, 206);
+    padding: 50px 20px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1); 
+    border-radius: 20px 20px 0 0;
+}
+.fade-section {
+    opacity: 100; 
+    transform: translateY(50px); 
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-section.visible {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+.banner {
+    position: relative;  /* Để các phần tử con có thể xếp chồng lên */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('Screenshot 2024-12-02 134654.png') no-repeat center center/cover;
+    z-index: 1;  /* Banner ở dưới */
+}
+
+/* Cập nhật phần giới thiệu */
+#about {
+    top: 100%; /* Đưa phần giới thiệu xuống dưới banner */
+    width: 100%;
+    padding: 50px 20px;
+    background: rgb(243, 206, 206);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 20px 0 0;
+    z-index: 2;  /* Phần giới thiệu trên banner */
+}
+
+#products {
+    padding: 50px 20px;
+    background-color: #9eff83;
+    top: 100%; /* Đưa phần giới thiệu xuống dưới banner */
+    width: 100%;
+    padding: 50px 20px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 20px 0 0;
+    z-index: 2;  /* Phần giới thiệu trên banner */
+}
+#products img{
+    width: 60%;
+}
+
+
+
+
+/* Hình ảnh sản phẩm */
+.product-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Thông tin sản phẩm */
+.product-info {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.product-info h3 {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hiệu ứng hover cho các phần tử */
+.product-item:hover .product-info {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Bố cục responsive */
+@media (max-width: 767px) {
+    .product-item {
+        margin-bottom: 20px;
+    }
+}
+/* Phần Giới Thiệu */
+.intro-section {
+    background: linear-gradient(135deg, #f2f2f2, #ffcccb); /* Tạo gradient ấm áp */
+    padding: 60px 0;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d91d1d; /* Màu đỏ Noel */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.section-subtitle,
+.section-content,
+.section-footer {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.section-footer {
+    font-weight: bold;
+    color: #d91d1d;
+}
+
+.section-content strong {
+    color: #b22222; /* Màu đỏ đậm cho các phần quan trọng */
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle,
+    .section-content {
+        font-size: 1rem;
+    }
+}
+
+/* Phần Nến và Thiệp */
+#products {
+    padding: 50px 20px;
+    background-color: #f8f8f8; /* Nền sáng để tạo sự tươi sáng */
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Hiệu ứng zoom khi hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh khi hover */
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.product-item:hover .product-image img {
+    opacity: 0.8; /* Tạo hiệu ứng mờ khi hover */
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+    background-color: #f3f3f3;
+    border-top: 2px solid #d91d1d; /* Tạo đường viền đỏ cho phần mô tả */
+}
+
+.product-info h3 {
+    font-size: 1.5rem;
+    color: #d91d1d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Thiết kế cho mobile */
+@media (max-width: 768px) {
+    .product-item {
+        margin-bottom: 30px;
+    }
+}
+.intro-section {
+    background: url('background-xmas.jpg') no-repeat center center fixed; /* Thêm ảnh nền Giáng Sinh */
+    background-size: cover; /* Đảm bảo ảnh nền luôn che phủ toàn bộ */
+    background-attachment: fixed; /* Tạo hiệu ứng parallax */
+    padding: 80px 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflakes i {
+    position: absolute;
+    top: -10px;
+    font-size: 20px;
+    opacity: 0.8;
+    animation: snowfall 5s infinite linear;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #9070da;
+    padding-top: 100px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Phần tử hình ảnh */
+.image-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hình ảnh */
+.image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hiệu ứng hover - phóng to và sáng lên */
+.image-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.image-item:hover .image-img {
+    transform: scale(1.1);
+}
+
+
+.image-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.image-item:hover::before {
+    opacity: 1;
+}
+body {
+    background: linear-gradient(to right, #ff0000, #0000ff);
+   font-family: Arial, sans-serif;
+}
+.sponsor-section {
+    background: #6959de;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tiêu đề của phần nhà tài trợ */
+.sponsor-section .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Các logo của nhà tài trợ */
+.sponsors-logos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    animation: scroll-logos 15s linear infinite;
+}
+
+/* Mỗi logo */
+.sponsor-item {
+    flex: 0 0 auto;
+    margin: 0 20px;
+}
+.sponsor-item img{
+    width: 100%;
+}
+
+/* Logo tài trợ */
+.sponsor-logo {
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hiệu ứng hover khi di chuột qua logo */
+.sponsor-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Keyframes cho hiệu ứng chạy ngang qua và quay lại */
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(100%); /* Bắt đầu từ ngoài màn hình bên phải */
+    }
+    50% {
+        transform: translateX(-100%); /* Di chuyển qua bên trái ngoài màn hình */
+    }
+    100% {
+        transform: translateX(100%); /* Quay lại bên phải */
+    }
+}
+
+
+/* Section Liên hệ */
+.contact-section {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact-section .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-section .section-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 2rem;
+}
+
+.contact-icon {
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.contact-icon:hover {
+    transform: scale(1.2);
+    color: #007bff;
+}
+
+.contact-icon i {
+    font-size: 2.5rem;
+}
+
