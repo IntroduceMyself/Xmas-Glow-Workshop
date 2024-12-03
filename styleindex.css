@@ -3,7 +3,7 @@
 }
 
 .navbar-dark .navbar-brand:hover {
-    color: #FFD700;
+    color: #000000;
 }
 
 .nav-link {
@@ -13,7 +13,7 @@
 }
 
 .nav-link:hover {
-    color: #FFD700;
+    color: #4400ff;
 }
 
 .nav-link::after {
@@ -23,7 +23,7 @@
     bottom: 0;
     width: 0;
     height: 2px;
-    background: #FFD700;
+    background: #ffffff;
     transition: width 0.3s ease-in-out;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .custom-toggler.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-46deg);
 }
 
 .custom-toggler {
@@ -127,11 +127,11 @@
 }
 
 .custom-toggler.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(311deg);
 }
 
 .navbar {
-    background: linear-gradient(45deg, #ff0000, #007dff);
+    background: linear-gradient(45deg, #9d52ff, #589bff);
     /* Màu đỏ và xanh Giáng sinh */
     position: relative;
     overflow: hidden;
@@ -190,7 +190,7 @@
 /* Nội dung navbar ở trên lớp tuyết */
 .navbar .container,
 .navbar .navbar-toggler {
-    position: relative;
+    /* position: relative; */
     z-index: 1;
 }
 
@@ -230,22 +230,22 @@
         transform: translateX(10px);
     }
 }
-
+/* Banner */
 .banner {
     position: relative;
     height: 100vh;
-    /* Chiều cao toàn màn hình */
-    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-    /* Hình ảnh nền */
+    background: url('Capture.PNG') no-repeat center center/cover;
+    /* Sử dụng nền hình ảnh lạnh và hiện đại */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: rgb(255, 255, 255);
     overflow: hidden;
+    animation: fadeInBackground 3s ease-in-out;
 }
 
-/* Hiệu ứng overlay mờ */
+/* Hiệu ứng overlay mờ với tông màu lạnh Giáng Sinh */
 .banner::before {
     content: "";
     position: absolute;
@@ -253,8 +253,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    /* Tông đen nhẹ để làm nổi bật nội dung */
+    background: rgba(0, 0, 128, 0.5); /* Tông màu xanh biển để làm nổi bật nội dung */
     z-index: 0;
 }
 
@@ -264,19 +263,21 @@
     z-index: 1;
     max-width: 800px;
     padding: 20px;
+    animation: slideUp 1s ease-out;
 }
 
 .banner-content h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7), 0px 0px 30px rgba(255, 0, 0, 0.8);
+    /* Ánh sáng lấp lánh với chữ */
 }
 
 .banner-content p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
 }
 
 /* Nút trong banner */
@@ -285,145 +286,58 @@
     padding: 15px 30px;
     font-size: 1.2rem;
     color: white;
-    background: #ff0000;
-    /* Màu đỏ nổi bật */
-    border-radius: 5px;
+    background: #FF3366; /* Màu hồng đỏ ấm áp */
+    border-radius: 25px;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounceIn 1s ease-out;
 }
 
 .btn-banner:hover {
-    background: #e60000;
+    background: #e6006f; /* Màu tối hơn khi hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
 
-.btn-banner {
-    display: inline-flex;
-    /* Hiển thị icon và chữ trên cùng một hàng */
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    /* Khoảng cách giữa icon và chữ */
-    padding: 10px 20px;
-    /* Khoảng cách bên trong */
-    font-size: 1rem;
-    /* Kích thước chữ */
-    color: white;
-    background: #ff0000;
-    /* Màu nền đỏ nổi bật */
-    border-radius: 25px;
-    /* Góc bo tròn */
-    text-decoration: none;
-    /* Loại bỏ gạch chân */
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Hiệu ứng icon và chữ trên cùng một dòng */
 .btn-banner i {
     font-size: 1.5rem;
-    /* Kích thước icon */
-}
-
-.btn-banner:hover {
-    background: #e60000;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-}
-
-.banner {
-    position: relative;
-    height: 100vh;
-    background: url('Screenshot 2024-12-02 134654.png') no-repeat center center/cover;
-    /* Cập nhật đường dẫn */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
+    margin-right: 8px;
 }
 
 .glowing-text {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: bold;
-    color: #fff;
+    color: #fff5f5;
     text-align: center;
     text-transform: uppercase;
-    animation: glow 2s infinite;
+    animation: glow 2s infinite alternate;
     position: relative;
     z-index: 1;
 }
 
-.glowing-text::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #00ff00, #00ffee, #007bff, #9d00ff, #ff00eb, #ff0000);
-    background-size: 400%;
-    filter: blur(900px);
-    z-index: -1;
-    animation: glow-bg 6s infinite linear;
-}
 
-@keyframes glow {
-
-    0%,
-    100% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff7300, 0 0 30px #ff7300, 0 0 40px #ff7300, 0 0 50px #ff7300;
-    }
-
-    50% {
-        text-shadow: 0 0 20px #fff, 0 0 40px #ffeb00, 0 0 60px #ffeb00, 0 0 80px #ffeb00, 0 0 100px #ffeb00;
-    }
-}
-
-@keyframes glow-bg {
+/* Hiệu ứng fade-in cho nền */
+@keyframes fadeInBackground {
     0% {
-        background-position: 0% 50%;
+        opacity: 0;
     }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
     100% {
-        background-position: 0% 50%;
+        opacity: 1;
     }
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ee2005, #ffeb00);
-    border-radius: 5px;
-    border: 2px solid #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #ffeb00, #ee2005);
-}
-
-.fade-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-section.show {
-    opacity: 1;
-    transform: translateY(0);
+/* Hiệu ứng slide-up cho nội dung */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .container {
@@ -447,92 +361,245 @@
     font-size: 18px;
 }
 
-/* Phần giới thiệu */
+/* Phần Giới Thiệu */
 .intro-section {
-    background: linear-gradient(to bottom, #FFEFBA, #FFFFFF);
-    padding: 60px 0;
+    padding: 80px 0;
+    background: linear-gradient(to bottom, #9d52ff, #dceaff);
+    /* Nền màu nhạt với hiệu ứng mờ nhẹ tạo cảm giác mùa đông */
+    text-align: center;
+    color: #d31010;
+    position: relative;
 }
 
-/* Sắp xếp các sản phẩm */
+/* Hiệu ứng overlay mờ cho phần giới thiệu */
+.intro-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 0;
+}
+
+/* Nội dung trong phần giới thiệu */
+.intro-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Tiêu đề phần giới thiệu */
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-out;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Phụ đề */
+.section-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    color: #444;
+    font-style: italic;
+    animation: fadeIn 2s ease-out 0.5s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Thông tin chi tiết */
+.section-info {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-out 1s;
+}
+
+/* Nút trong phần giới thiệu */
+.btn-banner {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background: #ff3366; /* Màu hồng đỏ nhẹ */
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounceIn 1s ease-out;
+}
+
+.btn-banner:hover {
+    background: #e6006f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-banner i {
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
+
+/* Hiệu ứng fade-in cho phần nội dung */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hiệu ứng bounce-in cho nút */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Phần Sản Phẩm - Nến và Thiệp */
+#products{
+    background-color: linear-gradient(to bottom, #9d52ff, #ffffff);
+}
 .product-item {
     display: flex;
-    flex-direction: column; /* Đảm bảo các phần tử xếp theo chiều dọc */
-    align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
-    background-color: #f9f9f9; /* Nền sáng để làm nổi bật */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng cho phần tử */
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgb(165, 156, 255); /* Đổ bóng cho phần tử */
+    transition: all 0.3s ease;
+    position: relative;
 }
-/* Hiệu ứng hover cho hình ảnh */
-.product-image img:hover {
+
+.product-item:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ nổi bật */
+}
+
+/* Phần thông tin sản phẩm */
+.product-info {
+    text-align: center;
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 2.5rem;
+    color: #ff3366; /* Màu đỏ nổi bật cho mùa Giáng Sinh */
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease; /* Thêm hiệu ứng đổi màu khi hover */
+}
+
+.product-info p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Thay đổi màu khi hover */
+.product-item:hover .product-info h3 {
+    color: #ffd700; /* Màu vàng giống với ánh đèn Giáng Sinh */
+}
+
+/* Hình ảnh sản phẩm */
+.product-image {
+    width: 100%;
+    max-width: 350px; /* Đảm bảo kích thước hợp lý */
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgb(165, 156, 255);
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào hình ảnh */
+.product-item:hover .product-image {
     transform: scale(1.05); /* Phóng to hình ảnh khi hover */
-    filter: brightness(1.2); /* Tăng độ sáng hình ảnh khi hover */
 }
 
 /* Định dạng hình ảnh */
 .product-image img {
     width: 100%;
-    max-width: 350px; /* Giới hạn chiều rộng của hình ảnh */
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho hình ảnh */
-    margin-bottom: 20px; /* Khoảng cách giữa hình ảnh và phần thông tin */
-}
-
-/* Định dạng phần thông tin sản phẩm */
-.product-info {
-    text-align: center;
-    padding: 10px;
-}
-
-.product-info h3 {
-    font-size: 24px;
-    color: #228B22;
-    margin-bottom: 10px;
-    font-weight: bold;
-    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động cho tiêu đề */
-}
-/* Hiệu ứng hover cho phần thông tin */
-.product-item:hover .product-info h3 {
-    transform: translateY(-5px); /* Đẩy tiêu đề lên khi hover */
-    color: #007bff; /* Thay đổi màu chữ khi hover */
-}
-
-/* Hiệu ứng khi hover toàn bộ sản phẩm */
-.product-item:hover {
-    transform: translateY(-10px); /* Đẩy phần tử lên khi hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Bóng đổ đậm hơn khi hover */
+    transition: transform 0.3s ease;
 }
 
 /* Responsive cho màn hình nhỏ */
 @media (max-width: 768px) {
     .product-item {
         flex-direction: column; /* Đảm bảo phần tử xếp theo chiều dọc trên các thiết bị nhỏ */
+        align-items: center;
+        padding: 20px;
     }
 
-    .product-image img {
+    .product-image {
         max-width: 90%; /* Hình ảnh sẽ chiếm 90% chiều rộng */
-        margin-bottom: 15px; /* Khoảng cách giữa hình ảnh và phần thông tin */
+        margin-bottom: 15px;
     }
 
     .product-info h3 {
-        font-size: 20px; /* Giảm kích thước chữ tiêu đề */
+        font-size: 1.8rem; /* Giảm kích thước chữ tiêu đề */
         margin-bottom: 12px;
     }
+
+    .product-info p {
+        font-size: 1.1rem; /* Giảm kích thước chữ phần mô tả */
+    }
 }
+
+/* Hiệu ứng fade-in cho phần sản phẩm */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thêm hiệu ứng cho các sản phẩm */
+.product-item.left, .product-item.right {
+    animation: fadeIn 1.5s ease-out;
+}
+
 /* Phần Thư viện ảnh */
 /* Căn chỉnh container */
+.image-gallery{
+ background-color: linear-gradient(to bottom, #9d52ff, #dceaff);
+}
 .gl {
     text-align: center;
-    padding: 50px 0;
+    padding: 60px 0;
+    background-color: #f1f1f1; /* Tạo nền nhẹ nhàng */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgb(165, 156, 255); /* Hiệu ứng bóng đổ nhẹ */
 }
 
 /* Tiêu đề của phần gallery */
 .section-title {
-    font-size: 24px;
-    color: #B22222;
-    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #333; /* Màu tối cho văn bản, dễ đọc hơn */
+    margin-bottom: 40px;
+    font-weight: 600;
+    line-height: 1.6;
 }
 
 /* Cài đặt lưới ảnh với layout hình bậc thang */
@@ -551,6 +618,7 @@
     position: relative;
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;
+    background-color: #fff; /* Nền trắng sạch sẽ cho ảnh */
 }
 
 .image-item img {
@@ -563,23 +631,12 @@
 /* Hiệu ứng khi hover vào ảnh */
 .image-item:hover img {
     transform: scale(1.1);
+    filter: brightness(1.1); /* Làm sáng hình ảnh khi hover */
 }
 
 /* Hiệu ứng nâng hình ảnh khi cuộn qua */
 .image-item:hover {
-    transform: translateY(-10px);
-}
-
-/* Tùy chỉnh hiệu ứng fade khi xuất hiện */
-.fade-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-section.show {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-10px); /* Nâng lên khi hover */
 }
 
 /* Bố cục bậc thang */
@@ -591,95 +648,279 @@
     grid-column: span 1;
 }
 
+/* Tiêu đề chung */
+.section-titlee {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Highlight với tone tím nhạt */
+.highlight {
+    font-weight: bold;
+    color: #8A2BE2; /* Tím nhạt */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+.highlight:hover {
+    color: #6A0DAD; /* Tím đậm hơn khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* Hiệu ứng fade-in cho thư viện ảnh */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thêm hiệu ứng fade-in cho các ảnh */
+.image-item {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Thêm hiệu ứng cho tiêu đề */
+.section-title {
+    animation: fadeIn 2s ease-out;
+    opacity: 0;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
 /* Phần Nhà tài trợ */
 .sponsor-section {
     padding: 60px 0;
-    background-color: #FFEFBA;
     text-align: center;
+    background-color: #f9f9f9; /* Nền sáng nhẹ */
     position: relative;
-    overflow: hidden; /* Ẩn phần logo chạy ra ngoài khung */
+    overflow: hidden;
+    border-top: 3px solid #B22222; /* Đường viền trên màu đỏ để tạo điểm nhấn */
 }
 
+/* Tiêu đề của phần */
+.sponsor-section .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #8d50ff;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Hiệu ứng đèn lấp lánh sau tiêu đề */
+.sponsor-section .section-title::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #B22222, #FFD700);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: glow 2s infinite linear;
+}
+
+/* Hiệu ứng lấp lánh */
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Container logo */
 .sponsors-logos {
     display: flex;
-    flex-wrap: nowrap; /* Không để các logo xuống dòng */
-    justify-content: flex-start; /* Logo sẽ chạy từ trái sang phải */
-    gap: 100px; /* Khoảng cách giữa các logo */
-    animation: scroll-logos 20s linear infinite; /* Chạy logo liên tục */
+    flex-wrap: nowrap;
+    gap: 50px;
+    justify-content: flex-start;
+    animation: scroll-logos 20s linear infinite;
+    align-items: center;
 }
 
-.sponsor-item {
-    display: inline-block;
-    margin: 0 10px;
+/* Hiệu ứng logo cuộn ngang */
+@keyframes scroll-logos {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
+/* Logo */
 .sponsor-item img {
     width: 150px;
     height: auto;
-    transition: transform 0.3s ease;
-}
-/* Hiệu ứng khi hover lên logo */
-.sponsor-item img:hover {
-    transform: scale(1.1); /* Phóng to logo khi hover */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2)); /* Đổ bóng nhẹ */
 }
 
-/* Animation để logo chạy ngang */
-@keyframes scroll-logos {
-    0% {
-        transform: translateX(100%); /* Bắt đầu từ ngoài màn hình bên phải */
+/* Hiệu ứng phóng to khi hover */
+.sponsor-item img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.3)); /* Tăng bóng đổ khi hover */
+}
+
+
+/* Phần Đơn Vị Tổ Chức */
+.organizers-section {
+    padding: 60px 0;
+    background-color: #fff; /* Nền sáng để nổi bật logo */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid #B22222; /* Đường viền đỏ trên để phù hợp không khí Noel */
+}
+
+/* Tiêu đề */
+.organizers-section .section-title {
+    font-size: 2rem;
+    color: #803ff8; /* Màu đỏ nổi bật */
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Đường viền lấp lánh sau tiêu đề */
+.organizers-section .section-title::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #B22222, #FFD700);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: glow 2s infinite linear;
+}
+
+/* Hiệu ứng lấp lánh */
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.8;
     }
-    100% {
-        transform: translateX(-100%); /* Chạy ra ngoài màn hình bên trái */
+    50% {
+        opacity: 1;
     }
 }
+
+/* Logo */
+.organizer-logo {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(248, 111, 111, 0.959); /* Đổ bóng nhẹ */
+    background: rgba(0, 0, 0, 0.363); /* Nền mờ nhẹ phía sau logo */
+    padding: 10px; /* Thêm khoảng cách để logo không dính vào viền */
+    transition: transform 0.3s ease, filter 0.3s ease, background 0.3s ease;
+    filter: drop-shadow(0px 4px 6px rgb(117, 9, 240));
+}
+
+/* Hover hiệu ứng logo */
+.organizer-item:hover .organizer-logo {
+    transform: scale(1.1); /* Phóng to logo khi hover */
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.3));
+    background: rgba(51, 28, 28, 0.507); /* Tăng độ rõ ràng khi hover */
+}
+
+/* Tùy chọn thêm: Viền sáng xung quanh logo */
+.organizer-logo {
+    border: 2px solid rgb(192, 22, 22); /* Viền sáng nhẹ */
+}
+
+
 
 /* Phần liên hệ */
 .contact-section {
     text-align: center;
-    padding: 50px 0;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f7f7f7, #fff);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
 }
 
-.section-title {
-    font-size: 24px;
-    color: #B22222;
+/* Tiêu đề */
+.contact-section .section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #a462e2;
     margin-bottom: 20px;
+}
+
+/* Đoạn mô tả */
+.contact-section p {
+    font-size: 18px;
+    color: #5c5c5c;
+    margin-bottom: 30px;
 }
 
 /* Biểu tượng liên hệ */
 .contact-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     margin-top: 20px;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
 }
 
+/* Biểu tượng từng kênh */
 .contact-icon {
-    font-size: 36px;
-    color: #B22222;
-    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    font-size: 42px;
+    color: #5255f8;
+    background: #fff;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
+/* Hiệu ứng khi hover */
 .contact-icon:hover {
     transform: scale(1.2);
-    color: #FF6347;
-}
-.highlight {
-    font-weight: bold;
-    color: #FF4500; /* Màu nổi bật (cam đỏ) */
-    transition: color 0.3s ease, transform 0.3s ease;
+    background: #32a5f1;
+    box-shadow: 0 8px 15px rgba(255, 69, 0, 0.3);
 }
 
-/* Hiệu ứng khi di chuột qua */
-.highlight:hover {
-    color: #B22222; /* Màu đỏ đậm hơn khi hover */
-    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+/* Hiệu ứng bông tuyết rơi */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('snowflakes.png'); /* Hình ảnh bông tuyết */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* Mờ để không lấn át nội dung */
+    z-index: 0;
 }
+
 #backToTopBtn {
     position: fixed;
     bottom: 30px;
     right: 30px;
     display: none;
-    background-color: #ff4500; /* Màu đỏ cam rực rỡ cho Giáng Sinh */
+    background-color: #cc90ee; /* Màu đỏ cam rực rỡ cho Giáng Sinh */
     color: white;
     font-size: 28px; /* Kích thước biểu tượng */
     border: none;
@@ -697,7 +938,7 @@
 }
 /* Hiệu ứng khi di chuột qua nút */
 #backToTopBtn:hover {
-    background-color: #b22222; /* Đổi sang màu đỏ đậm hơn khi hover */
+    background-color: #322b3b; /* Đổi sang màu đỏ đậm hơn khi hover */
     transform: scale(1.1); /* Phóng to nhẹ khi hover */
 }
 
@@ -709,7 +950,7 @@
 }
 /* Footer Styles */
 .footer {
-    background-color: #333; /* Màu nền tối */
+    background-color: #605375; /* Màu nền tối */
     color: #fff; /* Màu chữ trắng */
     padding: 40px 0;
     text-align: center;
@@ -753,7 +994,7 @@
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #555;
+    background-color: #a68eff;
     transition: all 0.3s ease;
 }
 
@@ -778,91 +1019,4 @@
     .social-link {
         margin-bottom: 10px;
     }
-}
-.organizers-section {
-    padding: 50px 0;
-    background-color: #FFEFBA;
-    text-align: center;
-}
-
-.organizers-section .section-title {
-    font-size: 2.5rem;
-    color: #b22222;
-    margin-bottom: 20px;
-}
-
-.organizers-section .section-subtitle {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.organizers-logos {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* Tăng khoảng cách giữa các logo */
-    background: linear-gradient(135deg, #6e7cfd, #4ac6ff, #81c7fa); /* Thêm màu sáng hơn vào gradient */
-    padding: 40px 0; /* Thêm padding để tạo không gian xung quanh */
-    border-radius: 10px; /* Bo góc cho phần nền */
-    width: 50%;
-    margin: 0 auto; /* Căn giữa phần logos */
-    transition: background 0.3s ease; /* Thêm hiệu ứng cho phần nền */
-}
-
-.organizers-logos:hover {
-    background: linear-gradient(135deg, #4ac6ff, #81c7fa, #6e7cfd); /* Thay đổi gradient khi hover */
-}
-.organizers-logos .organizer-logo {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động */
-}
-
-.organizers-logos .organizer-logo:hover {
-    transform: scale(1.1); /* Phóng to logo khi hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Thêm bóng mờ cho logo */
-}
-
-.organizer-logo {
-    width: 150px;
-    height: auto;
-}
-@media (max-width: 768px) {
-    .organizers-logos {
-        width: 80%; /* Giảm chiều rộng để phù hợp với màn hình nhỏ */
-        padding: 30px 0; /* Giảm padding cho không gian vừa phải */
-        gap: 20px; /* Giảm khoảng cách giữa các logo */
-    }
-
-    .organizers-logos .organizer-logo {
-        width: 120px; /* Giảm kích thước logo cho thiết bị di động */
-    }
-}
-
-/* Responsive - Khi màn hình nhỏ hơn 480px */
-@media (max-width: 480px) {
-    .organizers-logos {
-        width: 90%; /* Tăng chiều rộng để tận dụng tối đa không gian trên màn hình nhỏ */
-        padding: 20px 0; /* Thêm chút padding nhỏ để tránh bị chật */
-        gap: 10px; /* Giảm khoảng cách giữa các logo */
-    }
-
-    .organizers-logos .organizer-logo {
-        width: 100px; /* Kích thước logo nhỏ hơn trên màn hình cực nhỏ */
-    }
-}
-/* Thêm lớp fade-section cho các phần muốn có hiệu ứng */
-/* Các phần tử khi bắt đầu sẽ có độ mờ */
-.fade-section {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;  /* Hiệu ứng mượt mà khi độ mờ thay đổi */
-}
-
-/* Khi phần tử có lớp "show", nó sẽ hiện ra */
-.fade-section.show {
-    opacity: 1;
-}
-
-/* Tùy chỉnh thêm cho các phần khác nếu cần */
-.sponsor-section, .intro-section, .image-gallery, .organizers-section, .contact-section {
-    opacity: 0; /* Ẩn ban đầu */
-    transition: opacity 1s ease-in-out; /* Hiệu ứng mờ dần */
 }
